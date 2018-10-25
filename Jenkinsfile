@@ -6,10 +6,10 @@ pipeline {
         git(branch: 'master', credentialsId: 'loginhub', url: 'https://github.com/FousseynouSakho/pipeline')
       }
     }
-    stage('build') {
+    stage('build maven') {
       steps {
         sleep(unit: 'MINUTES', time: 10)
-        timestamps()
+        bat(script: 'runmaven.bat', encoding: 'utf-8')
       }
     }
     stage('results') {
