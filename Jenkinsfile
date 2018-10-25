@@ -14,7 +14,7 @@ pipeline {
 		stage('publication') {
 		steps{
 			nexusArtifactUploader artifacts: [
-						[artifactId:'jpetstore', type;'war', classifier: 'debug', file: 'target/jpetstore.war']
+						[artifactId:'jpetstore', type:'war', classifier: 'debug', file: 'target/jpetstore.war']
 					],
 				nexusVersion:'nexus3',
 				protocol: 'http',
@@ -22,7 +22,7 @@ pipeline {
 				groupId:'jpetstore',
 				version:'1.0-SNAPSHOT',
 				repository:'maven-snapshots',
-				credentialsId: 'adminpipeline'
+				credentialsId:'adminpipeline'
 					
 			}
 		}
