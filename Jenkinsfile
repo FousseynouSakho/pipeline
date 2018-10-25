@@ -11,11 +11,5 @@ pipeline {
         bat(script: 'runmaven.bat', encoding: 'utf-8')
       }
     }
-    stage('results') {
-      steps {
-        echo 'message'
-        sleep 10
-      }
-    }
   }
 }
