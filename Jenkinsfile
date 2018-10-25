@@ -13,8 +13,7 @@ pipeline {
 		}
 		stage('publication') {
 			steps { 
-			nexusArtifactUploader artifacts: [ [artifactId: 'jpetstore', type: 'war', classifier: 'debug', file: 'target
-			'target/jpetstore.war']
+			nexusArtifactUploader artifacts: [ [artifactId: 'jpetstore', type: 'war', classifier: 'debug', file: 'target/jpetstore.war']
 				],
 			 nexusVersion: 'nexus3',
 			 protocol: 'http', 
