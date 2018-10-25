@@ -18,7 +18,7 @@ pipeline {
         protocol('http')
         nexusUrl('localhost:8081/')
         groupId('jpetstore')
-        version('1.0')
+        version('3.14.0')
         repository('maven-snapshot')
         credentialsId('admin123')
         artifact {
