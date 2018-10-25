@@ -21,7 +21,7 @@ pipeline {
 			 groupId: 'jpetstore',
 			 version: '1.0-SNAPSHOT', 
 			 repository: 'maven-snapshots', 
-			 credentialsId: '807b6526-906b-4bc7-937f-bd6fae027d1c' }
+			 credentialsId: '501dc971-0827-4619-9971-de58945bbc9b' }
 		}
 	  }
   }
