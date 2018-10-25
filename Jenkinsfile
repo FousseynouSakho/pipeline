@@ -1,9 +1,9 @@
 pipeline {
   agent any
   stages {
-    stage('prepare') {
+    stage('recuperation des sources') {
       steps {
-        timestamps()
+        git(branch: 'master', credentialsId: 'loginhub', url: 'https://github.com/FousseynouSakho/pipeline')
       }
     }
     stage('build') {
