@@ -17,7 +17,7 @@ pipeline {
 						[artifactId:'jpetstore', type:'war', classifier: 'debug', file: 'target/jpetstore.war']
 					],
 				nexusVersion:'nexus3',
-				protocol: 'http',
+				protocol:'http',
 				nexusUrl:'localhost:8081/',
 				groupId:'jpetstore',
 				version:'1.0-SNAPSHOT',
