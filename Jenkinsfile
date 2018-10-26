@@ -13,7 +13,7 @@ pipeline {
     }
     stage('qualimetrie') {
       steps {
-		withSonarCubeEnv('sonar'){
+		withSonarCubeEnv('Sonar'){
         bat(script: 'runsonar.bat', encoding: 'utf-8')
 
 		}
@@ -22,9 +22,8 @@ pipeline {
 	stage('qualityGate') {
       steps {
 	  sleep 10
-		timeout(time: 10, unit: 'MINUTES'){
-       waitForQualityGate (abortPipeline: true)
-
+		timeout(time: 4, unit: 'MINUTES'){
+		waitForQualityGate(abortPipeline: true)
 			}
 		}
 	}
