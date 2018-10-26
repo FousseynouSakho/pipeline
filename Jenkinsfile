@@ -12,7 +12,7 @@ pipeline {
       }
     }
 
-    stage('publication') {
+    
     stage('publication') {
 			steps { 
 			nexusArtifactUploader artifacts: [ [artifactId: 'jpetstore', type: 'war', classifier: 'debug', file: 'target/jpetstore.war']
@@ -27,4 +27,3 @@ pipeline {
 		}
     }
   }
-}
