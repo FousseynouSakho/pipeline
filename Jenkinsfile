@@ -13,7 +13,17 @@ pipeline {
     }
     stage('qualimetrie') {
       steps {
+		withSonarCubeEnv('sonar'){
         bat(script: 'runsonar.bat', encoding: 'utf-8')
+		}
+      }
+    }
+	stage('qualityGate') {
+      steps {
+	  wait for
+		timeout(time; 10, unit: 'MINUTES'){
+       waitForQualityGate abortPipeline: true
+		}
       }
     }
     stage('publication') {
