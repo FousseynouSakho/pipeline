@@ -1,5 +1,5 @@
 /**
- *    Copyright 2010-2017 the original author or authors.
+ *    Copyright 2010-2018 the original author or authors.
  *
  *    Licensed under the Apache License, Version 2.0 (the "License");
  *    you may not use this file except in compliance with the License.
@@ -62,7 +62,7 @@ public class AccountService {
     accountMapper.updateAccount(account);
     accountMapper.updateProfile(account);
 
-    if (account.getPassword() != null && account.getPassword().length() > 0) {
+    if (account != null && account.getPassword().length() > 0) {
       accountMapper.updateSignon(account);
     }
   }
