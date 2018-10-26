@@ -1,1 +1,1 @@
-mvn clean install sonar:sonar
+mvn sonar:sonar
