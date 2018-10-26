@@ -1,6 +1,5 @@
 pipeline {
-  agent any
-<<<<<<< HEAD
+ 
 	  stages {
 		stage('recuperation des sources') {
 		  steps {
@@ -30,7 +29,7 @@ pipeline {
 			 credentialsId: '501dc971-0827-4619-9971-de58945bbc9b' }
 		}
 	  }
-=======
+
   stages {
     stage('recuperation des sources') {
       steps {
@@ -53,6 +52,6 @@ pipeline {
         				], nexusVersion: 'nexus3', protocol: 'http', nexusUrl: 'localhost:8081/', groupId: 'jpetstore', version: '1.0-SNAPSHOT', repository: 'maven-snapshots', credentialsId: '501dc971-0827-4619-9971-de58945bbc9b')
       }
     }
->>>>>>> 5ece32ea1d468ab247b3744f6557de37990acd21
+
   }
 }
