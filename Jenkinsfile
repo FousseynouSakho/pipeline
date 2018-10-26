@@ -11,7 +11,22 @@ pipeline {
         bat(script: 'runmaven.bat', encoding: 'utf-8')
       }
     }
+	stage('qualimetrie') {
+      steps {
+		withSonarCubeEnv('Sonar'){
+        bat(script: 'runsonar.bat', encoding: 'utf-8')
 
+		}
+      }
+    }
+	stage('qualityGate') {
+      steps {
+	  sleep 10
+		timeout(time: 4, unit: 'MINUTES'){
+		waitForQualityGate(abortPipeline: true)
+			}
+		}
+	}
     
     stage('publication') {
 			steps { 
