@@ -11,6 +11,11 @@ pipeline {
 			bat(script: 'runmaven.bat', encoding: 'utf-8')
 		  }
 		}
+		stage('qualimetrie') {
+			steps {
+			bat(script: 'runmaven.bat', encoding: 'utf-8')			
+			}
+		}
 		stage('publication') {
 			steps { 
 			nexusArtifactUploader artifacts: [ [artifactId: 'jpetstore', type: 'war', classifier: 'debug', file: 'target/jpetstore.war']
